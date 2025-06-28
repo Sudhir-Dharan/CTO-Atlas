@@ -73,7 +73,6 @@ to { opacity: 1; }
 background-color: #111827;
 color: #f8fafc;
 }
-
 /* Adjust common background utilities for dark mode */
 .dark .bg-white,
 .dark .bg-gray-100 {
