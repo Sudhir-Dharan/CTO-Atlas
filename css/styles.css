@@ -1,6 +1,6 @@
 body {
-font-family: 'Inter', sans-serif;
-background-color: #f8f9fa;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
 }
 .pillar-title {
 font-size: 2.5rem;
@@ -68,95 +68,4 @@ display: block;
 @keyframes fadeIn {
 from { opacity: 0; }
 to { opacity: 1; }
-}
-.dark body {
-background-color: #111827;
-color: #f8fafc;
-}
-/* Adjust common background utilities for dark mode */
-.dark .bg-white,
-.dark .bg-gray-100 {
-  background-color: #1f2937 !important;
-}
-.dark .bg-gray-200 {
-  background-color: #374151 !important;
-}
-.dark .card {
-  background-color: #1f2937;
-  border-color: #374151;
-}
-
-/* Text adjustments for dark mode */
-.dark .text-content {
-  color: #d1d5db;
-}
-
-.dark .subsection-title {
-  color: #93c5fd;
-}
-
-.dark .pillar-title {
-  color: #e0e7ff;
-}
-
-.dark .tab-button {
-  color: #d1d5db;
-}
-
-.dark .tab-button.active {
-  color: #f8fafc;
-  border-bottom-color: #e63946;
-}
-
-/* Background adjustments for dark mode */
-.dark .bg-blue-50,
-.dark .bg-blue-100,
-.dark .bg-blue-200 {
-  background-color: #1e3a8a !important;
-}
-
-.dark .bg-blue-300 {
-  background-color: #1d4ed8 !important;
-}
-
-.dark .bg-blue-400 {
-  background-color: #2563eb !important;
-}
-
-.dark .bg-blue-500 {
-  background-color: #3b82f6 !important;
-}
-
-.dark .bg-green-50,
-.dark .bg-green-100,
-.dark .bg-green-200 {
-  background-color: #064e3b !important;
-}
-
-.dark .bg-red-50,
-.dark .bg-red-100,
-.dark .bg-red-200 {
-  background-color: #7f1d1d !important;
-}
-
-.dark .bg-orange-50,
-.dark .bg-orange-100 {
-  background-color: #7c2d12 !important;
-}
-
-.dark .bg-yellow-50,
-.dark .bg-yellow-100 {
-  background-color: #713f12 !important;
-}
-
-.dark .bg-purple-100 {
-  background-color: #5b21b6 !important;
-}
-
-.dark .bg-cyan-100 {
-  background-color: #164e63 !important;
-}
-
-.dark .bg-gray-700 {
-  background-color: #374151 !important;
 }
