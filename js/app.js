@@ -6,19 +6,6 @@ async function loadPartials() {
   }));
 }
 
-function setupThemeToggle() {
-  const toggle = document.getElementById('theme-toggle');
-  if (!toggle) return;
-  toggle.addEventListener('click', () => {
-    document.documentElement.classList.toggle('dark');
-    const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-  });
-  const stored = localStorage.getItem('theme');
-  if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  }
-}
 
 function setupTabs() {
   const tabGroups = document.querySelectorAll('[data-tab-group]');
@@ -226,7 +213,6 @@ function setupSummaryGenerator() {
 
 document.addEventListener('DOMContentLoaded', async () => {
   await loadPartials();
-  setupThemeToggle();
   setupTabs();
   setupCharts();
   setupSummaryGenerator();
