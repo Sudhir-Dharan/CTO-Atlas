@@ -9,23 +9,967 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="css/styles.css?v=1">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+       .pillar-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1d3557; 
+            line-height: 1.2;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-top: 2rem;
+        }
+       .subsection-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #457b9d;
+            margin-bottom: 1rem;
+        }
+       .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            padding: 1.5rem;
+            border: 1px solid #dee2e6;
+            display: flex;
+            flex-direction: column;
+        }
+       .text-content {
+            color: #495057;
+            line-height: 1.6;
+        }
+       .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 1rem auto;
+            height: 350px;
+        }
+       .pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+       .tab-button {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-size: 0.875rem;
+            color: #495057;
+            text-align: center;
+       }
+       .tab-button.active {
+            border-bottom-color: #e63946;
+            color: #1d3557;
+            font-weight: 600;
+        }
+       .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+       }
+       .tab-content.active {
+            display: block;
+       }
+       @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
-    <div data-include="partials/header.html"></div>
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold text-gray-800">The CTO's Strategic Atlas</div>
+                <div class="hidden md:flex space-x-4 text-sm font-semibold">
+                    <a href="#pillar1" class="text-gray-600 hover:text-red-500">Leadership & Innovation</a>
+                    <a href="#pillar2" class="text-gray-600 hover:text-red-500">Architecture & Dev</a>
+                    <a href="#pillar3" class="text-gray-600 hover:text-red-500">Management & Gov</a>
+                    <a href="#pillar4" class="text-gray-600 hover:text-red-500">Org. Leadership</a>
+                    <a href="#pillar5" class="text-gray-600 hover:text-red-500">Optional Modules</a>
+                    <a href="#interactive" class="text-gray-600 hover:text-red-500">Summary Tool</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <main class="container mx-auto p-4 md:p-8">
-        <div data-include="partials/hero.html"></div>
-        <div data-include="partials/pillar1.html"></div>
-        <div data-include="partials/pillar2.html"></div>
-        <div data-include="partials/pillar3.html"></div>
-        <div data-include="partials/pillar4.html"></div>
-        <div data-include="partials/pillar5.html"></div>
-        <div data-include="partials/interactive.html"></div>
+        
+        <section id="hero" class="text-center py-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold" style="color:#1d3557;">The CTO's Strategic Atlas</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">A Comprehensive Visual Guide to Technology Leadership, Digital Strategy, and Value Creation.</p>
+        </section>
+
+        <!-- Pillar 1: Strategic Leadership and Innovation -->
+        <section id="pillar1" class="py-12">
+            <h2 class="pillar-title">Strategic Leadership & Innovation</h2>
+            <div class="flex flex-wrap justify-center border-b border-gray-300 mb-8" data-tab-group="pillar1">
+                <button class="tab-button active" data-tab="p1-t1">Role of CTO</button>
+                <button class="tab-button" data-tab="p1-t2">Strategy Catalyst</button>
+                <button class="tab-button" data-tab="p1-t3">Discovering Innovation</button>
+                <button class="tab-button" data-tab="p1-t4">Managing Innovation</button>
+            </div>
+            
+            <div id="p1-t1" class="tab-content active" data-tab-group="pillar1">
+                 <div class="card">
+                    <h3 class="subsection-title text-center">The Modern CTO's Mandate</h3>
+                    <p class="text-content text-center mb-6">In today's volatile (VUCA) digital economy, the CTO is a visionary leader and strategy catalyst who bridges technology with business objectives, moving from a technical guardian to a P&L-influencing partner.</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-center">The Evolving Archetype</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="border-2 border-red-200 rounded-lg p-3">
+                                    <h5 class="font-bold text-red-700">THEN</h5>
+                                    <ul class="list-disc list-inside text-sm text-content"><li>Internal Focus</li><li>Cost Center</li><li>Technical Depth</li></ul>
+                                </div>
+                                <div class="border-2 border-green-200 rounded-lg p-3">
+                                    <h5 class="font-bold text-green-700">NOW</h5>
+                                    <ul class="list-disc list-inside text-sm text-content"><li>External Focus</li><li>Revenue Driver</li><li>Strategic Partner</li></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-center">3 Dimensions of Value Delivery</h4>
+                            <div class="space-y-2 text-center">
+                               <div class="p-2 bg-blue-50 rounded-lg shadow-sm">🚀 Innovation</div>
+                               <div class="p-2 bg-green-50 rounded-lg shadow-sm">🎯 Purpose</div>
+                               <div class="p-2 bg-orange-50 rounded-lg shadow-sm">🤝 Partnerships</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-4 text-center">CTO Role Variations by Company Size</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm mb-8">
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>Start-up (The Translator)</b><br>Focus on MVP, wears many hats, acts as tech/business bridge.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>Mid-size (The Integrator)</b><br>Oversees tech strategy, integrates systems across functions.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>Large Firm (The Visionary)</b><br>Integral to leadership/board, drives entire tech vision.</div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-center">Key Qualities & Skills of an Effective CTO</h4>
+                    <div class="chart-container" style="max-width: 600px; height: 350px;">
+                        <canvas id="ctoSkillsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="p1-t2" class="tab-content" data-tab-group="pillar1">
+                <div class="card">
+                    <h3 class="subsection-title text-center">The CTO as Strategy Catalyst</h3>
+                    <p class="text-content text-center mb-6">The CTO must understand the foundational drivers of the digital economy (SMAC + IoT), the exponential "laws" governing it, and the new rules of competition to drive strategy.</p>
+                    <h4 class="font-bold text-lg mb-2 text-center">Drivers of Exponential Growth</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm mb-8">
+                        <div class="p-3 bg-white rounded-lg shadow-sm"><b>Moore's Law:</b> Computing capacity doubles every ~18 months.</div>
+                        <div class="p-3 bg-white rounded-lg shadow-sm"><b>Metcalfe's Law:</b> Network value grows exponentially with users.</div>
+                        <div class="p-3 bg-white rounded-lg shadow-sm"><b>Bandwidth Law:</b> Internet bandwidth grows rapidly.</div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-center">Waves of the Digital Economy</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center text-sm mb-8">
+                        <div class="p-3 bg-blue-50 rounded-lg"><b>First Wave (People-to-People):</b> Focused on connectivity via SMAC (Social, Mobile, Analytics, Cloud).</div>
+                        <div class="p-3 bg-green-50 rounded-lg"><b>Second Wave (Object-to-Object):</b> Bridged physical and digital worlds via IoT.</div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-center">The New Rules: Scale, Scope & Speed</h4>
+                            <div class="chart-container"><canvas id="competitionRadarChart"></canvas></div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-center">The Rise of Ecosystems</h4>
+                            <p class="text-content text-center text-sm mb-4">Strategy is now about partnering to address customer needs.</p>
+                            <div class="space-y-2">
+                                <div class="p-2 bg-gray-100 rounded-lg"><b>Incumbents:</b> Serve "Delivered Needs".</div>
+                                <div class="p-2 bg-gray-100 rounded-lg"><b>Digital Giants:</b> Disrupt across industries.</div>
+                                <div class="p-2 bg-gray-100 rounded-lg"><b>Entrepreneurs:</b> Address "Latent Needs".</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p1-t3" class="tab-content" data-tab-group="pillar1">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Discovering Innovation Opportunities</h3>
+                    <p class="text-content text-center mb-6">To catalyze innovation, a CTO must first understand the firm's business model, then identify "sweet spots" for digital augmentation.</p>
+                    <h4 class="font-bold text-lg mb-4 text-center">The 4 Components of a Business Model</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="p-3 bg-blue-100 rounded-lg"><b>Value Proposition:</b> What customer need (delivered or latent) are we solving?</div>
+                        <div class="p-3 bg-green-100 rounded-lg"><b>Critical Resources:</b> What assets (brand, talent, IP) do we need?</div>
+                        <div class="p-3 bg-yellow-100 rounded-lg"><b>Critical Processes:</b> What activities must we perform well?</div>
+                        <div class="p-3 bg-red-100 rounded-lg"><b>Profit Model:</b> How do we make money?</div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-center">Digital Innovation Sweet Spots</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="p-4 bg-white rounded-lg shadow"><p class="text-2xl mb-2">😊</p><h5 class="font-bold">Enriching Customer Experience</h5><p class="text-sm">Using tech (mobile, AI) to improve convenience and engagement.</p></div>
+                        <div class="p-4 bg-white rounded-lg shadow"><p class="text-2xl mb-2">⚙️</p><h5 class="font-bold">Optimizing Core Operations</h5><p class="text-sm">Enhancing efficiency and performance in supply chain, manufacturing, etc.</p></div>
+                        <div class="p-4 bg-white rounded-lg shadow"><p class="text-2xl mb-2">💡</p><h5 class="font-bold">Creating Digital Products</h5><p class="text-sm">Leveraging tech to meet new needs and create new revenue streams.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="p1-t4" class="tab-content" data-tab-group="pillar1">
+                 <div class="card">
+                    <h3 class="subsection-title text-center">Managing the Innovation Portfolio</h3>
+                    <p class="text-content text-center mb-6">A CTO must strategically balance investments across different project types and strategic horizons to ensure both short-term stability and long-term growth.</p>
+                    <h4 class="font-bold text-lg mb-4 text-center">The Three Horizons of Tech Investment</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm mb-8">
+                        <div class="p-3 bg-blue-100 rounded-lg"><b>Horizon 1 (70%): Sustain</b><br>Maintaining critical systems, optimizing cost and performance.</div>
+                        <div class="p-3 bg-green-100 rounded-lg"><b>Horizon 2 (20%): Scale</b><br>Expanding capabilities and markets incrementally.</div>
+                        <div class="p-3 bg-red-100 rounded-lg"><b>Horizon 3 (10%): Transform</b><br>Radical, disruptive innovation and new business models.</div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-center">Six Rationales for Categorizing Investments</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center text-sm">
+                        <div class="p-2 bg-gray-100 rounded-lg">Mandatory Projects</div>
+                        <div class="p-2 bg-gray-100 rounded-lg">Technology Renewal</div>
+                        <div class="p-2 bg-gray-100 rounded-lg">Incremental Improvement</div>
+                        <div class="p-2 bg-gray-100 rounded-lg">Competitive Necessity</div>
+                        <div class="p-2 bg-gray-100 rounded-lg">Competitive Advantage</div>
+                        <div class="p-2 bg-gray-100 rounded-lg">Digital Infrastructure</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillar 2: Technology Architecture & Development -->
+        <section id="pillar2" class="py-12 bg-gray-200 rounded-lg">
+            <h2 class="pillar-title">Technology Architecture & Development</h2>
+            <div class="flex flex-wrap justify-center border-b border-gray-400 mb-8" data-tab-group="pillar2">
+                <button class="tab-button active" data-tab="p2-t5">Tech Architect</button>
+                <button class="tab-button" data-tab="p2-t6">Product Dev</button>
+                <button class="tab-button" data-tab="p2-t7">Generative AI</button>
+                <button class="tab-button" data-tab="p2-t8">Emerging Tech</button>
+            </div>
+            <div id="p2-t5" class="tab-content active" data-tab-group="pillar2">
+                <div class="card">
+                    <h3 class="subsection-title text-center">The CTO as Technology Architect</h3>
+                    <p class="text-content text-center mb-6">The CTO translates business strategy into a resilient and agile technology infrastructure, balancing open innovation with commercialization and rapid scaling.</p>
+                    <h4 class="font-bold text-lg mb-4 text-center">The 5 Pillars of Digital Infrastructure</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 text-sm">
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>1. Operational Backbone:</b> Integrated systems (ERP, CRM) for efficiency and a single source of truth.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>2. Shared Customer Insights:</b> Platforms to generate and share knowledge about customer value and behavior.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>3. Digital Platform:</b> A repository of reusable business and tech components for rapid innovation.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>4. External Developer Platform:</b> APIs to enable open innovation and seamless partner integration.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>5. Accountability Framework:</b> Clear ownership, governance, and decision rights for digital offerings.</div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-4 text-center">Key Architectural Principles</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h5 class="font-semibold text-center mb-2">The Two-Speed Architecture</h5>
+                            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-center">
+                                <div class="w-full p-3 border-2 border-dashed border-cyan-400 rounded-lg">
+                                    <h6 class="font-bold text-cyan-600">Fast Frontend (Agile)</h6>
+                                    <p class="text-xs text-content">Customer-facing apps for rapid iteration.</p>
+                                </div>
+                                <div class="font-bold text-lg text-gray-500 p-1">↔️</div>
+                                <div class="w-full p-3 border-2 border-solid border-blue-800 rounded-lg">
+                                    <h6 class="font-bold text-blue-900">Slow Backend (Stable)</h6>
+                                    <p class="text-xs text-content">Core systems for reliability & integrity.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-center mb-2">Key Dimensions of Tech Strategy</h5>
+                            <div class="chart-container" style="height: 250px;"><canvas id="techStrategyRadarChart"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p2-t6" class="tab-content" data-tab-group="pillar2">
+                 <div class="card">
+                    <h3 class="subsection-title text-center">Strategic Product Development</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-center">The Leadership Duo</h4>
+                             <div class="grid grid-cols-2 gap-4">
+                                <div class="p-3 bg-blue-50 rounded-lg"><b>CTO: "How" We Build It</b><br><span class="text-sm">Focuses on technology, scalability, security, and the technical team.</span></div>
+                                <div class="p-3 bg-orange-50 rounded-lg"><b>CPO: "What" & "Why" We Build It</b><br><span class="text-sm">Focuses on product vision, market fit, growth, and the product team.</span></div>
+                            </div>
+                        </div>
+                        <div>
+                             <h4 class="font-bold text-lg mb-2 text-center">Ansoff Matrix for Growth</h4>
+                             <div class="grid grid-cols-2 gap-2 text-xs text-center">
+                                <div class="p-2 bg-gray-100 rounded"><b>Market Penetration</b><br>(Existing Product, Existing Market)</div>
+                                <div class="p-2 bg-gray-100 rounded"><b>Product Development</b><br>(New Product, Existing Market)</div>
+                                <div class="p-2 bg-gray-100 rounded"><b>Market Development</b><br>(Existing Product, New Market)</div>
+                                <div class="p-2 bg-gray-100 rounded"><b>Diversification</b><br>(New Product, New Market)</div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <h4 class="font-bold text-lg mb-2 text-center">The Six-Dimensional Model for Digital Products</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center text-sm">
+                                <div class="p-2 bg-gray-100 rounded-lg">🎯 Target Audience</div>
+                                <div class="p-2 bg-gray-100 rounded-lg">💎 Value Proposition</div>
+                                <div class="p-2 bg-gray-100 rounded-lg">⭐ Differentiation</div>
+                                <div class="p-2 bg-gray-100 rounded-lg">📋 Feature List (MVP+)</div>
+                                <div class="p-2 bg-gray-100 rounded-lg">🎨 User Experience</div>
+                                <div class="p-2 bg-gray-100 rounded-lg">📊 Data Strategy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p2-t7" class="tab-content" data-tab-group="pillar2">
+                 <div class="card">
+                    <h3 class="subsection-title text-center">Neural Networks, Generative AI & Applications</h3>
+                    <p class="text-content text-center mb-6">AI is reshaping industries by moving through stages of digital evolution, from simple digitization to complete business transformation, powered by increasingly sophisticated Machine Learning methods.</p>
+                    <h4 class="font-bold text-lg mb-4 text-center">The 3 Stages of Digital Evolution</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-center text-sm mb-8">
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>1. Digitization</b><br>Converting analog information into digital format.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>2. Digitalization</b><br>Using digital tech to improve existing processes.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>3. Digital Transformation</b><br>Fundamentally changing how the business operates and delivers value.</div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-center">Core Machine Learning Methods</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="p-4 bg-white rounded-lg shadow"><p class="text-2xl mb-2">🏷️</p><h5 class="font-bold">Supervised Learning</h5><p class="text-sm">Learns from <b>labeled data</b> to make predictions. (e.g., Fraud Detection).</p></div>
+                        <div class="p-4 bg-white rounded-lg shadow"><p class="text-2xl mb-2">🧩</p><h5 class="font-bold">Unsupervised Learning</h5><p class="text-sm">Finds patterns in <b>unlabeled data</b>. (e.g., Customer Segmentation).</p></div>
+                        <div class="p-4 bg-white rounded-lg shadow"><p class="text-2xl mb-2">🤖</p><h5 class="font-bold">Reinforcement Learning</h5><p class="text-sm">Learns via <b>trial and error</b> rewards. (e.g., Robotics, Self-Driving Cars).</p></div>
+                    </div>
+                    <p class="text-xs text-gray-500 text-center mt-6">A key challenge remains AI <b>Explainability</b>—understanding the "why" behind AI decisions to mitigate bias and ensure ethical application.</p>
+                </div>
+            </div>
+            <div id="p2-t8" class="tab-content" data-tab-group="pillar2">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Blockchain, NFTs, AR/VR, Metaverse</h3>
+                    <p class="text-content text-center mb-6">The future is a convergence of technologies: Blockchain provides trust, NFTs enable ownership, and AR/VR creates the immersive interface for the Metaverse.</p>
+                    <h4 class="font-bold text-lg mb-2 text-center">The Evolution of the Web</h4>
+                    <div class="grid grid-cols-3 gap-2 text-center font-semibold mb-6">
+                        <div class="p-3 bg-gray-100 rounded-lg">Web 1.0<br><span class="text-sm font-normal">Read-Only Information</span></div>
+                        <div class="p-3 bg-gray-100 rounded-lg">Web 2.0<br><span class="text-sm font-normal">Read-Write Social</span></div>
+                        <div class="p-3 bg-gray-100 rounded-lg">Web 3.0<br><span class="text-sm font-normal">Read-Write-Own</span></div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-center">The Metaverse Technology Stack</h4>
+                    <div class="space-y-2 text-center text-sm">
+                        <div class="p-2 bg-purple-100 rounded-lg">Experience Layer: Metaverse</div>
+                        <div class="p-2 bg-cyan-100 rounded-lg">Interface Layer: AR/VR/MR</div>
+                        <div class="p-2 bg-green-100 rounded-lg">Ownership Layer: NFTs</div>
+                        <div class="p-2 bg-yellow-100 rounded-lg">Trust Layer: Blockchain</div>
+                    </div>
+                    <h4 class="font-bold text-lg mt-6 mb-2 text-center">Industrial Evolution</h4>
+                    <div class="grid grid-cols-2 gap-4 text-center text-sm">
+                        <div class="p-3 bg-blue-50 rounded-lg"><b>Industry 4.0: The Smart Factory</b><br>Automation & Data Exchange</div>
+                        <div class="p-3 bg-orange-50 rounded-lg"><b>Industry 5.0: Mass Customization</b><br>Human-Robot Collaboration</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillar 3: Technology Management and Governance -->
+        <section id="pillar3" class="py-12">
+             <h2 class="pillar-title">Technology Management & Governance</h2>
+            <div class="flex flex-wrap justify-center border-b border-gray-300 mb-8" data-tab-group="pillar3">
+                <button class="tab-button active" data-tab="p3-t9">GAI Masterclass</button>
+                <button class="tab-button" data-tab="p3-t10">Cybersecurity</button>
+                <button class="tab-button" data-tab="p3-t11">IT Governance</button>
+                <button class="tab-button" data-tab="p3-t12">Value Chain Digitisation</button>
+                <button class="tab-button" data-tab="p3-t13">Data Strategy</button>
+                <button class="tab-button" data-tab="p3-t14">Digital Supply Chains</button>
+            </div>
+            <div id="p3-t9" class="tab-content active" data-tab-group="pillar3">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Emerging Technology Assessment</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                             <h4 class="font-bold text-lg mb-2 text-center">Classic AI vs. Generative AI</h4>
+                             <div class="grid grid-cols-2 gap-4">
+                                <div class="p-3 bg-blue-50 rounded-lg"><b>Classic AI (The Analyst)</b><br><span class="text-sm">Focuses on structured data to predict outcomes.</span></div>
+                                <div class="p-3 bg-green-50 rounded-lg"><b>Generative AI (The Creator)</b><br><span class="text-sm">Learns from unstructured data to create new content.</span></div>
+                            </div>
+                        </div>
+                        <div>
+                             <h4 class="font-bold text-lg mb-2 text-center">How GAI Works</h4>
+                            <div class="space-y-2 text-sm">
+                                <p><b>GANs (The Artistic Duel):</b> A "Generator" creates fakes while a "Discriminator" spots them.</p>
+                                <p><b>LLMs (The Word Predictor):</b> Predicts the next word, trained on vast text data.</p>
+                            </div>
+                        </div>
+                         <div class="md:col-span-2">
+                             <h4 class="font-bold text-lg mb-2 text-center">The "Accelerative AI" Effect</h4>
+                            <div class="chart-container" style="height: 250px;"><canvas id="productivityChart"></canvas></div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p3-t10" class="tab-content" data-tab-group="pillar3">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Cybersecurity & Tech Laws</h3>
+                     <p class="text-content text-center mb-6">In the hyperconnected era of Industry 5.0, CTOs must defend against an evolving threat landscape and navigate a complex global patchwork of data privacy laws.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">Evolving Threat Landscape</h4>
+                             <div class="space-y-3 text-sm">
+                                <div class="p-3 bg-red-50 rounded-lg"><b>Ransomware Attacks:</b> Maliciously locking data for ransom.</div>
+                                <div class="p-3 bg-red-50 rounded-lg"><b>Fileless Malware:</b> Resides in memory to evade detection.</div>
+                                <div class="p-3 bg-red-50 rounded-lg"><b>AI-Amplified Social Engineering:</b> Highly convincing phishing tactics.</div>
+                             </div>
+                        </div>
+                         <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">Global Data Law Approaches</h4>
+                             <div class="space-y-3 text-sm">
+                                 <div class="p-3 bg-blue-50 rounded-lg"><b>🇪🇺 EU (GDPR):</b> Strict, rights-based, heavy penalties.</div>
+                                 <div class="p-3 bg-blue-50 rounded-lg"><b>🇺🇸 US:</b> Sector-specific (HIPAA, CCPA).</div>
+                                 <div class="p-3 bg-blue-50 rounded-lg"><b>🇮🇳 India (DPDPB):</b> Consent-centric, fiduciary accountability.</div>
+                                 <div class="p-3 bg-blue-50 rounded-lg"><b>🇨🇳 China (PIPL):</b> State-controlled, data localization.</div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div id="p3-t11" class="tab-content" data-tab-group="pillar3">
+                <div class="card">
+                    <h3 class="subsection-title text-center">IT Governance Masterclass</h3>
+                    <p class="text-content text-center mb-6">IT Governance provides a structured framework to manage IT resources, align with business objectives, manage risks, and ensure compliance, building trust with all stakeholders.</p>
+                    <h4 class="font-bold text-lg mb-4 text-center">The 5 Pillars of IT Governance</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-center text-sm mb-8">
+                        <div class="p-2 bg-gray-100 rounded-lg">🎯 Accountability</div>
+                        <div class="p-2 bg-gray-100 rounded-lg">🔍 Transparency</div>
+                        <div class="p-2 bg-gray-100 rounded-lg">🏗️ Structure</div>
+                        <div class="p-2 bg-gray-100 rounded-lg">🛡️ Risk Management</div>
+                        <div class="p-2 bg-gray-100 rounded-lg">✅ Compliance</div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-4 text-center">Accessibility by Design in the SDLC</h4>
+                     <div class="grid grid-cols-1 md:grid-cols-4 gap-2 text-center text-sm">
+                        <div class="p-2 bg-blue-50 rounded-lg"><b>1. Planning</b><br>Set objectives for diverse user needs.</div>
+                        <div class="p-2 bg-green-50 rounded-lg"><b>2. Design</b><br>Ensure the interface is effective for everyone.</div>
+                        <div class="p-2 bg-yellow-50 rounded-lg"><b>3. Testing</b><br>Identify and remove barriers before deployment.</div>
+                        <div class="p-2 bg-orange-50 rounded-lg"><b>4. Deployment</b><br>Guarantee final product meets all standards.</div>
+                    </div>
+                </div>
+            </div>
+            <div id="p3-t12" class="tab-content" data-tab-group="pillar3">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Digitisation of the Value Chain</h3>
+                     <p class="text-content text-center mb-6">CTOs must leverage data analytics to optimize operations, viewing the organization through the dual lenses of the Supply Chain (flow of materials) and the Value Chain (flow of value).</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-center">Supply Chain vs. Value Chain</h4>
+                             <div class="space-y-4 text-sm">
+                                <div class="p-3 bg-blue-50 rounded-lg"><b>Supply Chain Mgmt:</b> Focuses on the efficient flow of materials and processes from input to output. Keyword: <b>Efficiency</b>.</div>
+                                <div class="p-3 bg-green-50 rounded-lg"><b>Value Chain Mgmt:</b> Focuses on adding value at each step to meet customer demand and eliminate waste. Keyword: <b>Value</b>.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-center">The Analytics Value Pyramid</h4>
+                            <div class="text-center font-semibold">
+                                <div class="p-2 bg-red-500 text-white rounded-t-lg">Prescriptive<br><span class="text-xs font-normal">What should we do?</span></div>
+                                <div class="p-2 bg-blue-500 text-white">Predictive<br><span class="text-xs font-normal">What will happen?</span></div>
+                                <div class="p-2 bg-gray-700 text-white rounded-b-lg">Descriptive<br><span class="text-xs font-normal">What happened?</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-center">The 4 Drivers of Supply Chain Performance</h4>
+                    <p class="text-content text-center text-sm mb-4">Information is the linchpin that enables the strategic balancing of Transportation, Inventory, and Facilities to optimize the trade-off between cost (efficiency) and speed (responsiveness).</p>
+                </div>
+            </div>
+            <div id="p3-t13" class="tab-content" data-tab-group="pillar3">
+                 <div class="card">
+                    <h3 class="subsection-title text-center">Impact of Data Strategy & Analytics</h3>
+                    <p class="text-content text-center mb-6">Data is the "new oil," and companies like Amazon aggressively redesign business processes to collect it at every touchpoint, using those insights to optimize the entire value chain.</p>
+                    <h4 class="font-bold text-lg mb-4 text-center">Amazon's Data-Centric Playbook</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 text-sm">
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>Amazon Dash:</b> Physical buttons provide real-time data on consumption patterns.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>Anticipatory Delivery:</b> Predictive analytics ships items before you even order them.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>Amazon Key:</b> In-home delivery provides unstructured video data for process optimization.</div>
+                        <div class="p-3 bg-gray-100 rounded-lg"><b>Amazon Go:</b> Cashier-less stores analyze customer movement to optimize layouts.</div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-center">Transportation & Inventory Optimization</h4>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-semibold text-center mb-2">Network Design Options</h5>
+                            <div class="space-y-2 text-sm">
+                                <p><b>Direct Shipment:</b> Supplier → Buyer</p>
+                                <p><b>Aggregation (Milk Run):</b> Supplier → Multiple Buyers</p>
+                                <p><b>Cross-Docking:</b> Supplier → Sorting Center → Buyer</p>
+                            </div>
+                        </div>
+                         <div>
+                            <h5 class="font-semibold text-center mb-2">Inventory Types</h5>
+                            <div class="space-y-2 text-sm">
+                                <p><b>Cycle Stock:</b> Meets demand in perfect conditions.</p>
+                                <p><b>Safety Stock:</b> Buffers against uncertainty.</p>
+                                <p><b>In-Transit Stock:</b> Inventory currently being moved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p3-t14" class="tab-content" data-tab-group="pillar3">
+            </div>
+            <div id="p3-t15" class="tab-content" data-tab-group="pillar3">
+            </div>
+        </section>
+
+        <!-- Pillar 4: Value Chain & Operations -->
+        <section id="pillar4" class="py-12 bg-gray-200 rounded-lg">
+             <h2 class="pillar-title">Organisational Leadership & Communication</h2>
+            <div class="flex flex-wrap justify-center border-b border-gray-400 mb-8" data-tab-group="pillar4">
+                <button class="tab-button active" data-tab="p4-w16">Strategic Execution</button>
+                <button class="tab-button" data-tab="p4-w17">Change Mgmt</button>
+                <button class="tab-button" data-tab="p4-w18">Leading Orgs</button>
+                <button class="tab-button" data-tab="p4-w19">Disruption</button>
+                <button class="tab-button" data-tab="p4-w20">Crisis Mgmt</button>
+                <button class="tab-button" data-tab="p4-w21">Communication</button>
+            </div>
+            <div id="p4-w16" class="tab-content active" data-tab-group="pillar4">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Strategic Execution through Digital Transformation</h3>
+                    <p class="text-content text-center mb-6">Disruptive innovations are a process, not an event. They typically originate in overlooked low-end or new markets and succeed by creating a new business model, not just a new product.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">The Nature of Disruption</h4>
+                             <ul class="list-disc list-inside text-content space-y-2">
+                                <li>Starts in low-end or new-market footholds.</li>
+                                <li>Focus is on getting the business model right.</li>
+                                <li>Gradually erodes incumbent market share from the fringe.</li>
+                                <li>Example: The iPhone disrupting the laptop, not just other phones.</li>
+                            </ul>
+                        </div>
+                         <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">Key Disruptive Technologies</h4>
+                             <div class="space-y-3 text-sm">
+                                 <div class="p-3 bg-blue-50 rounded-lg">Industry 4.0 & 5.0</div>
+                                 <div class="p-3 bg-green-50 rounded-lg">IoT & Blockchain</div>
+                                 <div class="p-3 bg-yellow-50 rounded-lg">Generative & Agentic AI</div>
+                                 <p class="text-xs text-center mt-2"><b>Agentic AI Watch:</b> Gartner predicts 33% of enterprises will include agentic AI by 2028, up from <1% in 2024.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p4-w17" class="tab-content" data-tab-group="pillar4">
+                 <div class="card">
+                    <h3 class="subsection-title text-center">Championing Change Management</h3>
+                    <p class="text-content text-center mb-6">A CTO must lead organizational transformation by understanding growth strategies, navigating resistance with frameworks like Kotter's 8-Step model, and leveraging social networks.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                         <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">Growth Strategies: Build vs. Buy</h4>
+                             <div class="space-y-3 text-sm">
+                                <div class="p-3 bg-green-50 rounded-lg"><b>Organic Growth (Build):</b> Use internal resources to develop new capabilities (e.g., AWS).</div>
+                                <div class="p-3 bg-blue-50 rounded-lg"><b>Inorganic Growth (Buy):</b> Acquire capabilities via alliances or acquisitions.</div>
+                             </div>
+                        </div>
+                        <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">Organizational Network Analysis (ONA)</h4>
+                              <p class="text-content text-sm mb-2">Identify informal leaders to accelerate change.</p>
+                             <div class="space-y-2 text-sm">
+                                <p><b>Central Figures:</b> Highly connected individuals, key to broad communication.</p>
+                                <p><b>Brokers:</b> Connect disparate groups, essential for cross-functional initiatives.</p>
+                             </div>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg text-center mt-8 mb-4">Kotter's 8-Step Change Model</h4>
+                     <ol class="list-decimal list-inside text-content text-sm space-y-1 columns-2">
+                        <li>Create Urgency</li><li>Form a Powerful Coalition</li><li>Create a Vision</li><li>Communicate Vision</li>
+                        <li>Remove Obstacles</li><li>Generate Short-Term Wins</li><li>Build on the Change</li><li>Anchor the Change</li>
+                    </ol>
+                </div>
+            </div>
+            <div id="p4-w18" class="tab-content" data-tab-group="pillar4">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Building & Leading Organisations</h3>
+                     <p class="text-content text-center mb-6">Effective leadership is about executing strategy through a continuous cycle of sense-making and adaptation, and intentionally shaping a culture that supports this agility.</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                         <div>
+                            <h4 class="font-bold text-lg mb-4 text-center">The Strategy Execution Loop</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="p-2 bg-blue-50 rounded-lg"><b>1. Make Sense:</b> Distill facts from noise, encourage dissent.</div>
+                                <div class="p-2 bg-blue-50 rounded-lg"><b>2. Make Choices:</b> Explore alternatives, achieve qualified consensus.</div>
+                                <div class="p-2 bg-blue-50 rounded-lg"><b>3. Make It Happen:</b> Secure public commitments, ensure accountability.</div>
+                                <div class="p-2 bg-blue-50 rounded-lg"><b>4. Make Revisions:</b> Treat execution as learning, adapt continuously.</div>
+                            </div>
+                        </div>
+                        <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">The 4 Levers of Culture Change</h4>
+                             <p class="text-sm text-center mb-2">To change culture ("the smell of the place"), all four levers must be addressed simultaneously.</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="p-2 bg-green-50 rounded-lg"><b>Strategy:</b> Recalibrate strategic focus.</div>
+                                <div class="p-2 bg-green-50 rounded-lg"><b>Processes:</b> Implement disciplined, supporting systems.</div>
+                                <div class="p-2 bg-green-50 rounded-lg"><b>Team Dynamics:</b> Foster cross-functional collaboration.</div>
+                                <div class="p-2 bg-green-50 rounded-lg"><b>Leadership Behaviors:</b> Lead by example, set the tone.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p4-w19" class="tab-content" data-tab-group="pillar4">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Leadership in the Age of Disruption</h3>
+                    <p class="text-content text-center mb-6">Disruption is a process that originates in overlooked markets and succeeds through innovative business models, not just technology. The correct response is a dual one: defend the core while simultaneously exploring new opportunities.</p>
+                    <h4 class="font-bold text-lg mb-4 text-center">The Dual Response to Disruption (The "Wei Ji" Mindset)</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="p-4 bg-red-100 rounded-lg text-center">
+                            <h5 class="font-bold text-red-700">Threat Response (Defense)</h5>
+                            <p class="text-sm">Protect the existing cash cow, cut costs, and focus on core competencies. (e.g., Fujifilm protecting its film business).</p>
+                        </div>
+                        <div class="p-4 bg-green-100 rounded-lg text-center">
+                            <h5 class="font-bold text-green-700">Opportunity Response (Offense)</h5>
+                            <p class="text-sm">Pivot to capture new growth, invest in the future, and emerge stronger. (e.g., Fujifilm diversifying into medical imaging).</p>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-4 text-center">Frameworks for Navigating Disruption</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-semibold text-center mb-2">Brandenberger's 4-D Model</h5>
+                            <div class="space-y-2 text-sm">
+                                <p><b>Challenge Assumptions:</b> Question existing industry beliefs.</p>
+                                <p><b>Combine Products:</b> Integrate offerings in unusual ways.</p>
+                                <p><b>Work with Constraints:</b> Turn limitations into advantages.</p>
+                                <p><b>Look at Other Industries:</b> Apply lessons from other sectors.</p>
+                            </div>
+                        </div>
+                         <div>
+                            <h5 class="font-semibold text-center mb-2">Dynamic Model for Turbulent Times</h5>
+                            <ol class="list-decimal list-inside text-sm text-content space-y-1">
+                                <li>Define extreme but plausible scenarios.</li>
+                                <li>Identify strategic hedges/options.</li>
+                                <li>Run small, controlled experiments.</li>
+                                <li>Identify trigger points for action.</li>
+                                <li>Provide prescriptive surveillance.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p4-w20" class="tab-content" data-tab-group="pillar4">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Leading through Crisis</h3>
+                    <p class="text-content text-center mb-6">Crises are inevitable. Effective leadership involves proactive preparation, decisive action based on facts and values, and relentless communication to build and maintain trust.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">The 10 Rules of Crisis Management</h4>
+                            <ol class="list-decimal list-inside text-sm text-content space-y-1">
+                                <li>Accept the crisis; don't panic.</li>
+                                <li>Assemble a crisis team (with a Devil's Advocate).</li>
+                                <li>Get the facts; know your vulnerabilities.</li>
+                                <li>Act decisively and with speed.</li>
+                                <li>Know and uphold your core values.</li>
+                                <li>View as both threat and opportunity.</li>
+                                <li>Communicate, communicate, communicate.</li>
+                                <li>Take action and ensure flawless implementation.</li>
+                                <li>Learn from the crisis.</li>
+                                <li>Prepare before the crisis hits.</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-center">The CTO's Role in Resilience</h4>
+                            <p class="text-sm text-content mb-4">The CTO's role extends beyond technical failures to company-wide crisis management and building cyber resilience.</p>
+                            <ul class="list-disc list-inside text-sm text-content space-y-2">
+                                <li>Broaden Business Continuity Planning (BCP).</li>
+                                <li>Conduct regular crisis simulations with the C-Suite.</li>
+                                <li>Establish a fully-equipped "war room".</li>
+                                <li>Set guidelines for responsible AI use.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p4-w21" class="tab-content" data-tab-group="pillar4">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Strategic Communication for Technology Leaders</h3>
+                    <p class="text-content text-center mb-6">Strategic communication is about shaping perceptions and influencing outcomes. To mobilize an organization, a leader must engage stakeholders intellectually, emotionally, and practically.</p>
+                    <h4 class="font-bold text-lg mb-4 text-center">Communicate for Action & Impact</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-8">
+                        <div class="p-4 bg-blue-100 rounded-lg">
+                            <h5 class="font-bold text-blue-700">Engage the Head (Why)</h5>
+                            <p class="text-sm">Provide the logic, data, and strategic rationale for the change.</p>
+                        </div>
+                        <div class="p-4 bg-green-100 rounded-lg">
+                            <h5 class="font-bold text-green-700">Engage the Heart (Belief)</h5>
+                            <p class="text-sm">Use storytelling to inspire purpose, commitment, and persistence.</p>
+                        </div>
+                        <div class="p-4 bg-orange-100 rounded-lg">
+                            <h5 class="font-bold text-orange-700">Engage the Hands (How)</h5>
+                            <p class="text-sm">Give clear plans, define next steps, and outline responsibilities.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                         <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">Mastering Networks</h4>
+                             <div class="space-y-3 text-sm">
+                                <div class="p-3 bg-gray-100 rounded-lg"><b>Dense Networks:</b> Highly interconnected groups, ideal for efficient execution and collaboration.</div>
+                                <div class="p-3 bg-gray-100 rounded-lg"><b>Sparse Networks:</b> Connections to diverse, disconnected groups, ideal for fostering innovation.</div>
+                             </div>
+                        </div>
+                         <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">5 Elements of Storytelling</h4>
+                            <ol class="list-decimal list-inside text-sm text-content space-y-1">
+                                <li>Identify the Hero (The Team)</li>
+                                <li>Choose the Enemy (The Challenge)</li>
+                                <li>Define the Struggle</li>
+                                <li>Outline the Action for Resolution</li>
+                                <li>Paint a Picture of Success</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillar 5: Sustainability & Purpose -->
+        <section id="pillar5" class="py-12">
+            <h2 class="pillar-title">Optional: Expanding Leadership Horizons</h2>
+            <div class="flex flex-wrap justify-center border-b border-gray-300 mb-8" data-tab-group="pillar5">
+                <button class="tab-button active" data-tab="p5-ls">Leading Societies</button>
+                <button class="tab-button" data-tab="p5-sus">Sustainability</button>
+            </div>
+            <div id="p5-ls" class="tab-content active" data-tab-group="pillar5">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Leading Societies</h3>
+                    <p class="text-content text-center mb-6">Ethical leadership requires moving beyond mere legal compliance to create shared value for the business, its stakeholders, and society, guided by a clear sense of purpose and strong governance.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-center">Purpose of Business: An Evolution</h4>
+                            <div class="space-y-3 text-sm">
+                                <div class="p-3 bg-red-50 rounded-lg"><b>Then (Shareholder Primacy):</b> The primary responsibility of business is to maximize profits for shareholders.</div>
+                                <div class="p-3 bg-green-50 rounded-lg"><b>Now (Shared Value):</b> Create economic value in a way that also creates value for society by addressing its needs and challenges.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-center">Core Governance & Inclusion</h4>
+                            <div class="space-y-3 text-sm">
+                                <div class="p-3 bg-blue-50 rounded-lg"><b>Purpose > Strategy > Values:</b> 'Why' we exist guides 'How' we deploy resources, bound by non-negotiable 'Guideposts'.</div>
+                                <div class="p-3 bg-blue-50 rounded-lg"><b>Social Inclusion:</b> Fostered for ethical fairness and the business benefit of cognitive diversity.</div>
+                                <div class="p-3 bg-blue-50 rounded-lg"><b>Rigorous Audits:</b> Proactive internal and external audits to identify issues early, not just for box-ticking.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="p5-sus" class="tab-content" data-tab-group="pillar5">
+                 <div class="card">
+                    <h3 class="subsection-title text-center">Leadership Challenge with Sustainability</h3>
+                    <p class="text-content text-center mb-6">Sustainable value creation requires a holistic approach, balancing human needs with planetary boundaries and redesigning business models for circularity.</p>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                             <h4 class="font-bold text-lg mb-4 text-center">Doughnut Economics</h4>
+                             <p class="text-sm text-center mb-2">A compass for 21st-century prosperity, operating within social and ecological boundaries.</p>
+                             <div class="w-full text-center">
+                                 <div class="relative inline-block">
+                                     <div class="w-40 h-40 rounded-full bg-red-200 flex items-center justify-center">
+                                         <div class="w-28 h-28 rounded-full bg-green-200 flex items-center justify-center">
+                                             <div class="w-16 h-16 rounded-full bg-blue-200"></div>
+                                         </div>
+                                     </div>
+                                     <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold">
+                                         <span class="text-red-800 -mt-2">Ecological Ceiling</span>
+                                         <span class="text-green-800 mt-12">Safe & Just Space</span>
+                                         <span class="text-blue-800 mt-1">Social Foundation</span>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-center">Circular Business Models</h4>
+                             <p class="text-sm text-center mb-2">Shift from a linear "take-make-dispose" model to a regenerative one.</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="p-2 bg-gray-100 rounded-lg"><b>Reduce:</b> Minimize resource use from the start.</div>
+                                <div class="p-2 bg-gray-100 rounded-lg"><b>Reuse:</b> Extend product life via repair and refurbishment.</div>
+                                <div class="p-2 bg-gray-100 rounded-lg"><b>Recycle:</b> Recover materials for new production.</div>
+                                <div class="p-2 bg-blue-100 rounded-lg mt-2"><b>Key Enabler:</b> Product-as-a-Service Models.</div>
+                            </div>
+                        </div>
+                         <div class="md:col-span-2">
+                             <h4 class="font-bold text-lg mb-4 text-center">The Three Scopes of Environmental Impact</h4>
+                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-center">
+                                 <div class="p-3 bg-yellow-100 rounded-lg"><b>Scope 1: Direct</b><br>Emissions from company-controlled sources (e.g., factories).</div>
+                                <div class="p-3 bg-orange-100 rounded-lg"><b>Scope 2: Indirect</b><br>Emissions from purchased energy (e.g., electricity).</div>
+                                <div class="p-3 bg-red-100 rounded-lg"><b>Scope 3: Value Chain</b><br>All other indirect emissions, including product usage and disposal (often the largest).</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section id="interactive" class="py-12">
+            <h2 class="pillar-title">Key Takeaway Generator</h2>
+            <p class="text-content text-center max-w-3xl mx-auto mb-8">Select a course topic to get a concise, AI-generated summary of its most critical concepts and actionable insights for a CTO.</p>
+            <div class="card max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="module-select" class="block text-sm font-medium text-gray-700">Select a Topic</label>
+                        <select id="module-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                            <option value="Role of CTO">Role of CTO</option>
+                            <option value="CTO as Strategy Catalyst">Strategy Catalyst</option>
+                            <option value="Discovering Innovation Opportunities">Discovering Innovation</option>
+                            <option value="Managing Innovation Portfolio">Managing Innovation</option>
+                            <option value="Technology Architect">Technology Architect</option>
+                            <option value="Strategic Product Development">Strategic Product Development</option>
+                            <option value="Generative AI and Applications">Generative AI & Applications</option>
+                            <option value="Emerging Technologies">Emerging Technologies</option>
+                            <option value="Generative AI Masterclass">GAI Masterclass</option>
+                            <option value="Cybersecurity and Tech Laws">Cybersecurity & Tech Laws</option>
+                            <option value="IT Governance">IT Governance</option>
+                            <option value="Digitisation of the Value Chain">Business Analytics</option>
+                            <option value="Impact of Data Strategy and Analytics">Data Strategy & Retail</option>
+                            <option value="Digital Supply Chains">Supply Chain Optimization</option>
+                            <option value="Financial Management for CTOs">Financial Management</option>
+                            <option value="Strategic Execution through Digital Transformation">Strategic Execution</option>
+                            <option value="Championing Change Management">Change Management</option>
+                            <option value="Building and Leading Organisations">Building & Leading Orgs</option>
+                            <option value="Leadership in the Age of Disruption">Dynamics of Disruption</option>
+                            <option value="Leading through Crisis">Crisis Management</option>
+                            <option value="Strategic Communication for Technology Leaders">Strategic Communication</option>
+                            <option value="Leading Societies">Leading Societies</option>
+                            <option value="Leadership Challenge with Sustainability">Sustainability</option>
+                        </select>
+                    </div>
+                    <div class="md:mt-6">
+                         <button id="generate-summary-btn" class="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-2 px-4 rounded-lg hover:from-blue-700 hover:to-cyan-600 transition duration-300 flex items-center justify-center">
+                            <span class="mr-2">💡</span> Generate Summary
+                        </button>
+                    </div>
+                </div>
+                <div id="summary-output" class="mt-6 border-t pt-6 hidden prose max-w-none prose-sm prose-headings:text-blue-700 prose-ul:list-disc prose-ul:pl-5">
+                </div>
+            </div>
+        </section>
+
     </main>
-    <div data-include="partials/footer.html"></div>
-    <script type="module" src="js/app.js?v=1"></script>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 The CTO's Strategic Atlas. A Comprehensive Infographic of a CTO Programme.</p>
+        <p class="text-xs text-gray-400 mt-2">This infographic was programmatically generated. No SVG or Mermaid JS was used. AI features powered by Google Gemini.</p>
+    </footer>
+
+    <script>
+        // Tab functionality
+        const tabGroups = document.querySelectorAll('[data-tab-group]');
+        tabGroups.forEach(group => {
+            const buttons = group.querySelectorAll('.tab-button');
+            const groupName = group.dataset.tabGroup;
+            const contents = document.querySelectorAll(`.tab-content[data-tab-group="${groupName}"]`);
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const tabId = button.dataset.tab;
+                    contents.forEach(content => {
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                     // Initialize chart in the newly active tab
+                    const activeCanvas = document.querySelector(`.tab-content.active[data-tab-group="${groupName}"] canvas`);
+                    if (activeCanvas) {
+                        initializeChart(activeCanvas.id);
+                    }
+                });
+            });
+        });
+
+        const chartInstances = {};
+
+        function initializeChart(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas || chartInstances[canvasId]) return;
+
+            let chartConfig;
+            switch (canvasId) {
+                case 'ctoSkillsChart':
+                    chartConfig = { type: 'radar', data: { labels: ['Strategic Thinking', 'Innovation', 'External Focus', 'People Mgmt', 'Financial Acumen', 'Communication', 'Digital Acumen', 'Cross-Functional'], datasets: [{ label: 'CTO Skill Importance', data: [10, 9, 9, 8, 7, 9, 10, 8], fill: true, backgroundColor: 'rgba(69, 123, 157, 0.2)', borderColor: '#457b9d', pointBackgroundColor: '#457b9d' }] }, options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { r: { beginAtZero: true, max: 10 } } } };
+                    break;
+                case 'competitionRadarChart':
+                    chartConfig = { type: 'radar', data: { labels: ['Scale', 'Scope', 'Speed'], datasets: [{ label: 'Digital Leader', data: [9, 8, 9], fill: true, backgroundColor: 'rgba(67, 129, 180, 0.2)', borderColor: '#4381b4', pointBackgroundColor: '#4381b4' }] }, options: { maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { r: { beginAtZero: true, max: 10 } } } };
+                    break;
+                case 'techStrategyRadarChart':
+                     chartConfig = { type: 'radar', data: { labels: ['Microservices', 'Zero Downtime', 'Real-time Analytics', 'Secure Architecture', 'Agility', 'Modularity'], datasets: [{ label: 'Strategic Importance', data: [9, 8, 8, 10, 9, 9], fill: true, backgroundColor: 'rgba(230, 57, 70, 0.2)', borderColor: '#e63946', pointBackgroundColor: '#e63946' }] }, options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { r: { beginAtZero: true, max: 10, ticks: { display: false } } } } };
+                    break;
+                case 'productivityChart':
+                     chartConfig = { type: 'bar', data: { labels: ['Drug Discovery', 'Content Creation', 'Email Drafting', 'L&D Content', 'Protein Folding'], datasets: [{ label: 'Productivity Gain (X times faster)', data: [2, 25, 5, 8, 1000000], backgroundColor: 'rgba(78, 179, 146, 0.6)', borderColor: '#4eb392', borderWidth: 1 }] }, options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { type: 'logarithmic', ticks: { callback: function(value) { if (value === 1000000) return '1M'; if (value === 1000) return '1K'; if (value > 100) return null; return value; } } } } } };
+                    break;
+                case 'facilityCostChart':
+                    chartConfig = { type: 'line', data: { labels: [1, 5, 10, 15, 20, 25, 30], datasets: [{ label: 'Inventory Cost', data: [20, 35, 50, 65, 80, 95, 110], borderColor: '#e74c3c', fill: false, tension: 0.1 }, { label: 'Transportation Cost', data: [100, 60, 40, 30, 25, 28, 35], borderColor: '#2ecc71', fill: false, tension: 0.4 }, { label: 'Facility Cost', data: [15, 75, 150, 225, 300, 375, 450], borderColor: '#f39c12', fill: false, tension: 0.1 }, { label: 'Total Cost', data: [135, 120, 140, 180, 250, 340, 450], borderColor: '#3498db', backgroundColor: 'rgba(52, 152, 219, 0.2)', borderWidth: 3, fill: true, tension: 0.3 } ] }, options: { maintainAspectRatio: false, plugins: { title: { display: true, text: 'Cost Trade-Offs in Facility Network Design', font: { size: 16 } } }, scales: { x: { title: { display: true, text: 'Number of Facilities' } }, y: { title: { display: true, text: 'Relative Cost' }, beginAtZero: true } } } };
+                    break;
+                default:
+                    return;
+            }
+            chartInstances[canvasId] = new Chart(canvas, chartConfig);
+        }
+
+        // Initialize chart for the initially active tab
+        document.addEventListener('DOMContentLoaded', () => {
+             const initialActiveCanvas = document.querySelector('.tab-content.active canvas');
+             if(initialActiveCanvas) {
+                initializeChart(initialActiveCanvas.id);
+             }
+        });
+
+
+        // Gemini API functionality
+        const generateBtn = document.getElementById('generate-summary-btn');
+        const outputContainer = document.getElementById('summary-output');
+        const moduleSelect = document.getElementById('module-select');
+
+        generateBtn.addEventListener('click', async () => {
+            const selectedModule = moduleSelect.value;
+            
+            outputContainer.innerHTML = '<p class="text-center text-gray-500 animate-pulse">💡 Generating your key takeaways...</p>';
+            outputContainer.classList.remove('hidden');
+            generateBtn.disabled = true;
+            generateBtn.classList.add('opacity-50');
+
+            const prompt = `As a course instructor summarizing a CTO Programme, provide a concise summary of the key concepts and most important takeaways for a CTO from the module titled: '${selectedModule}'.
+
+Base your summary on general business and technology leadership principles exemplified in the course.
+
+Structure the response using markdown with the following two sections:
+**Key Concepts:** (List 2-3 of the most important frameworks or ideas introduced in this module).
+**Actionable Insight for a CTO:** (Provide a single, powerful takeaway that a CTO can directly apply to their work).
+
+Keep the language clear, strategic, and direct.`;
+
+            try {
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error(`API request failed: ${response.statusText}`);
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                
+                     const formattedHtml = text
+                       .replace(/\*\*(.*?):\*\*/g, '</ul><h3 class="subsection-title mt-4">$1</h3><ul>')
+                       .split('\n')
+                       .map(line => {
+                            line = line.trim();
+                            if (line.startsWith('* ')) {
+                                return `<li class="text-content">${line.substring(2)}</li>`;
+                            }
+                            if(line && !line.startsWith('**')){
+                               return `<p class="text-content">${line}</p>`
+                            }
+                            return '';
+                        }).join('').replace('</ul><ul>', '<ul>');
+
+                    outputContainer.innerHTML = `<div class="prose max-w-none">${formattedHtml}</ul></div>`;
+                } else {
+                    throw new Error("Invalid response structure from API.");
+                }
+
+            } catch (error) {
+                console.error("Summary generation error:", error);
+                outputContainer.innerHTML = `<p class="text-center text-red-600">Sorry, could not generate a summary. Please try again.</p>`;
+            } finally {
+                generateBtn.disabled = false;
+                generateBtn.classList.remove('opacity-50');
+            }
+        });
+    </script>
 </body>
 </html>
