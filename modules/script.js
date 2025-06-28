@@ -256,3 +256,12 @@ Keep the language clear, strategic, and direct.`;
                 generateBtn.classList.remove('opacity-50');
             }
         });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        if (menuBtn && navLinks) {
+            menuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('hidden');
+            });
+        }
