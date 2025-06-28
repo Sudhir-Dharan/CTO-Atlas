@@ -520,6 +520,32 @@
                 </div>
             </div>
             <div id="p3-t15" class="tab-content" data-tab-group="pillar3">
+                <div class="card">
+                    <h3 class="subsection-title text-center">Financial Management for CTOs</h3>
+                    <p class="text-content text-center mb-6">Technology leaders must speak the language of business to drive strategic value. This masterclass with Sunil Rawlani highlights how financial discipline transforms technology from a cost center into a value creator.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-center">Financial Governance Toolkit</h4>
+                            <ul class="list-disc list-inside text-content space-y-2 text-sm">
+                                <li>Align tech spend with business strategy.</li>
+                                <li>Fund innovation across pilots and scale ups.</li>
+                                <li>Track ROI, TCO &amp; payback KPIs via dashboards.</li>
+                                <li>Translate budgets into clear business value.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-center">Budgeting Methods</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="p-3 bg-gray-100 rounded-lg">Percentage-Based</div>
+                                <div class="p-3 bg-gray-100 rounded-lg">Variance-Based</div>
+                                <div class="p-3 bg-gray-100 rounded-lg">Zero-Based Budgeting</div>
+                                <div class="p-3 bg-gray-100 rounded-lg">Rolling Forecast</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-center">Three Horizons of Tech Investment</h4>
+                    <div class="chart-container" style="height: 250px;"><canvas id="investmentMixChart"></canvas></div>
+                </div>
             </div>
         </section>
 
@@ -1026,6 +1052,23 @@
                     x: { title: { display: true, text: 'Number of Facilities' } },
                     y: { title: { display: true, text: 'Relative Cost' }, beginAtZero: true }
                 }
+            }
+        });
+
+        new Chart(document.getElementById('investmentMixChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Sustain', 'Scale', 'Transform'],
+                datasets: [{
+                    data: [50, 30, 20],
+                    backgroundColor: ['#457b9d', '#4eb392', '#e63946'],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } }
             }
         });
 
