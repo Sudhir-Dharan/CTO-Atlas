@@ -264,4 +264,11 @@ Keep the language clear, strategic, and direct.`;
             menuBtn.addEventListener('click', () => {
                 navLinks.classList.toggle('hidden');
             });
+
+            // collapse menu when a link is selected (useful on mobile)
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.add('hidden');
+                });
+            });
         }
